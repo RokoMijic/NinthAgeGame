@@ -1,5 +1,5 @@
-from engine.data.statline import Statline
-from engine.data.constants import GENERAL_AND_DEFENSIVE_STAT_NAMES
+from src.main.engine.data.statline import Statline
+from src.main.engine.data.constants import GENERAL_AND_DEFENSIVE_STAT_NAMES
 
 class StatlineGeneral(Statline):
 

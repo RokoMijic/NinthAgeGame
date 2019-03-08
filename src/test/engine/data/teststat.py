@@ -1,4 +1,4 @@
-from engine.data.stat import Stat
+from src.main.engine.data.stat import Stat
 import unittest
 
 

@@ -1,4 +1,4 @@
-from engine.data.modelpart import ModelPart
+from src.main.engine.data.modelpart import ModelPart
 
 import unittest
 

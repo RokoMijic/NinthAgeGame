@@ -1,4 +1,4 @@
-from engine.data.model import Model
+from src.main.engine.data.model import Model
 
 import unittest
 

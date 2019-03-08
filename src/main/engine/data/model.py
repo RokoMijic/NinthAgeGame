@@ -1,6 +1,6 @@
-from engine.data.statlinegeneral import StatlineGeneral
-from engine.data.modelpart import ModelPart
-from engine.data.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
+from src.main.engine.data.statlinegeneral import StatlineGeneral
+from src.main.engine.data.modelpart import ModelPart
+from src.main.engine.data.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
 
 class Model(StatlineGeneral):
 

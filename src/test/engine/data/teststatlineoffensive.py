@@ -1,4 +1,4 @@
-from engine.data.statlineoffensive import StatlineOffensive
+from src.main.engine.data.statlineoffensive import StatlineOffensive
 
 import unittest
 

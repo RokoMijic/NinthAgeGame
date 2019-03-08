@@ -1,4 +1,4 @@
-from engine.data.statlinegeneral import StatlineGeneral
+from src.main.engine.data.statlinegeneral import StatlineGeneral
 
 import unittest
 
