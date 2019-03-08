@@ -27,4 +27,7 @@ var/
 # PyCharm
 .idea/
 
+# Virtual environment
+./ninthEnv
+
 
