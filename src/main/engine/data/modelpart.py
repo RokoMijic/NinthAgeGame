@@ -1,5 +1,5 @@
 from src.main.engine.data.statlineoffensive import StatlineOffensive
-from src.main.engine.data.constants import OFFENSIVE_SPECIAL_RULES
+from engine.constants import OFFENSIVE_SPECIAL_RULES
 
 
 class ModelPart(StatlineOffensive):

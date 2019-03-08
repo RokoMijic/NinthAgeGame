@@ -1,10 +1,12 @@
 from src.main.engine.data.statlinegeneral import StatlineGeneral
 from src.main.engine.data.modelpart import ModelPart
-from src.main.engine.data.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
+from engine.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
+
+from typing import List
 
 class Model(StatlineGeneral):
 
-    def __init__(self, modelname, gendefstatvalues, gendefspecialrules, modelpartname1, modelpartstatvalues1, modelpartspecialrules1):
+    def __init__(self, modelname, gendefstatvalues, gendefspecialrules, modelparts: List[ModelPart]):
 
         StatlineGeneral.__init__(self,gendefstatvalues)
 
@@ -13,21 +15,7 @@ class Model(StatlineGeneral):
 
         self.modelname = str(modelname)
         self.specialrules = gendefspecialrules
-        self.modelparts = []
-        self.add_modelpart(modelpartname1, modelpartstatvalues1, modelpartspecialrules1 )
-
-
-    # def __init__(self, gendefstatvalues, gendefspecialrules, modelpartstatvalues1, modelpartspecialrules1, *args):
-    #
-    #     if not len(args % 3 == 0): raise ValueError("wrong number of arguments")
-    #
-    #     self.__init__(gendefstatvalues, gendefspecialrules, modelpartstatvalues1, modelpartspecialrules1)
-    #     self.add_modelpart()
-    #  TODO: finish this
-
-
-    def add_modelpart(self, modelpartname, modelpartstatvalues, modelpartspecialrules):
-        self.modelparts.append(ModelPart(modelpartname, modelpartstatvalues,modelpartspecialrules))
+        self.modelparts = modelparts
 
     def __repr__(self):
         return "\n" + str(self.modelname) + "\n" + StatlineGeneral.__repr__(self) + "  |  " + ", ".join(self.specialrules) + "\n" +  "\n".join( [str(mp) for mp in self.modelparts ] )

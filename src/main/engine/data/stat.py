@@ -1,4 +1,4 @@
-from src.main.engine.data.constants import ALL_STAT_NAMES
+from engine.constants import ALL_STAT_NAMES
 
 class Stat:
 

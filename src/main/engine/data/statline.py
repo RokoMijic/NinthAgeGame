@@ -1,4 +1,3 @@
-from src.main.engine.data.constants import OFFENSIVE_STAT_NAMES, GENERAL_AND_DEFENSIVE_STAT_NAMES
 from src.main.engine.data.stat import Stat
 
 class Statline:
