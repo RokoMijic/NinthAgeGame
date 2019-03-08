@@ -1,5 +1,5 @@
 from src.main.engine.data.statline import Statline
-from engine.constants import DEFENSIVE_STAT_NAMES
+from src.main.engine.constants import DEFENSIVE_STAT_NAMES
 
 import unittest
 

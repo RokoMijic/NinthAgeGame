@@ -1,5 +1,5 @@
 from src.main.engine.data.statline import Statline
-from engine.constants import OFFENSIVE_STAT_NAMES
+from src.main.engine.constants import OFFENSIVE_STAT_NAMES
 
 class StatlineOffensive(Statline):
 

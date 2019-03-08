@@ -1,6 +1,6 @@
 from src.main.engine.data.statlinegeneral import StatlineGeneral
 from src.main.engine.data.modelpart import ModelPart
-from engine.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
+from src.main.engine.constants import GENERAL_AND_DEFENSIVE_SPECIAL_RULES
 
 from typing import List
 
