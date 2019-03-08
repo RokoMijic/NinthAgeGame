@@ -28,6 +28,6 @@ var/
 .idea/
 
 # Virtual environment
-./ninthEnv
+ninthEnv/
 
 
