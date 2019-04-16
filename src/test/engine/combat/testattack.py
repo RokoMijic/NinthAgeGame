@@ -33,6 +33,7 @@ class TestAttack(unittest.TestCase):
     def test_to_penetrate_1000_zombine_attacks_swordsman(self):
         Attack.roll_to_penetrate(zombiemodelpart, swordsmanmodel, numwounds=10000)
 
+
     #     test full attack roll
 
     def test_full_attack_1000(self):
@@ -40,6 +41,12 @@ class TestAttack(unittest.TestCase):
 
     def test_full_attack_1000_zombine_attacks_swordsman(self):
         Attack.full_attack_roll(zombiemodelpart, swordsmanmodel, numattacks=10000)
+
+    def test_full_attack_1000_zombine_attacks_knight(self):
+        Attack.full_attack_roll(zombiemodelpart, knightmodel, numattacks=10000)
+
+    def test_full_attack_1000_knight_attacks_zombie(self):
+        Attack.attack_roll_all_modelparts(knightmodel, zombiemodel, numattacks=10000)
 
 
 
