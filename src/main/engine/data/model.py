@@ -6,14 +6,19 @@ from typing import List
 
 class Model(StatlineGeneral):
 
-    def __init__(self, modelname, gendefstatvalues, gendefspecialrules, modelparts: List[ModelPart]):
+    def __init__(self, modelname, basewidth: float, basedepth: float, type, size, gendefstatvalues, gendefspecialrules, modelparts: List[ModelPart]):
 
         StatlineGeneral.__init__(self,gendefstatvalues)
 
         if not set(gendefspecialrules) <= set(GENERAL_AND_DEFENSIVE_SPECIAL_RULES):
             raise ValueError("At least one provided special rule is not valid: %s" % gendefspecialrules)
 
+
         self.modelname = str(modelname)
+        self.basewidth = basewidth
+        self.basedepth = basedepth
+        self.type = type
+        self.size = size
         self.specialrules = gendefspecialrules
         self.modelparts = modelparts
 
