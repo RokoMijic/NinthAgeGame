@@ -3,9 +3,11 @@
 
 # allowed stats and their groupings
 
-OFFENSIVE_STAT_NAMES = [ "Att", "Off", "Str", "AP", "Agi" ]
-DEFENSIVE_STAT_NAMES = ["HP", "Def", "Res", "Arm"]
 GENERAL_STAT_NAMES = ["Adv", "Mar", "Dis"]
+DEFENSIVE_STAT_NAMES = ["HP", "Def", "Res", "Arm"]
+OFFENSIVE_STAT_NAMES = [ "Att", "Off", "Str", "AP", "Agi" ]
+
+
 
 GENERAL_AND_DEFENSIVE_STAT_NAMES = GENERAL_STAT_NAMES + DEFENSIVE_STAT_NAMES
 ALL_STAT_NAMES = GENERAL_STAT_NAMES + DEFENSIVE_STAT_NAMES + OFFENSIVE_STAT_NAMES
@@ -21,5 +23,8 @@ ALL_SPECIAL_RULES = GENERAL_SPECIAL_RULES + DEFENSIVE_SPECIAL_RULES + OFFENSIVE_
 
 # tables for hitting and wounding
 
-TO_HIT_TABLE = { -10: 1, -9: 1, -8: 1, -7: 2, -6: 2, -5: 2, -4: 2, -3: 3, -2: 3, -1: 3,
+TO_HIT_TABLE =   { -10: 1, -9: 1, -8: 1, -7: 2, -6: 2, -5: 2, -4: 2, -3: 3, -2: 3, -1: 3,
                        0: 3, 1: 4, 2: 4, 3: 4, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5, 10: 5  }
+
+TO_WOUND_TABLE = { -10: 1, -9: 1, -8: 1, -7: 1, -6: 1, -5: 1, -4: 1, -3: 1, -2: 1, -1: 2,
+                       0: 3, 1: 4, 2: 5, 3: 5, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5, 10: 5  }
