@@ -1,6 +1,5 @@
 from src.main.engine.data.model import Model
 from src.main.engine.data.modelpart import ModelPart
-from src.main.engine.data.unit import Unit
 from src.main.engine.constants import TO_HIT_TABLE, TO_WOUND_TABLE
 from src.main.engine.utility.utiliy import n_d6_oversix
 import numpy as np
@@ -13,23 +12,9 @@ logger.addHandler(logging.StreamHandler())
 
 class Attack:
 
-    @staticmethod
-    def attack_unit(attacker: Unit, defender: Unit, facing: str = "FRONT"):
-        pass
 
     @staticmethod
-    def calculate_n_attacks(attacker: Unit, defender: Unit, facing: str):
-        pass
-
-
-    @staticmethod
-    def depth(Unit):
-        n_models = Unit.number
-        width = Unit.width
-
-
-    @staticmethod
-    def roll_to_hit(attackingmp: ModelPart, defender: Model, numattacks: int = 1):
+    def roll_to_hit(attackingmp: ModelPart, defender: Model, numattacks: int ):
         off = attackingmp.v("Off")
         defence = defender.v("Def")
         off_def_diff = off - defence
@@ -41,7 +26,7 @@ class Attack:
 
 
     @staticmethod
-    def roll_to_wound(attackingmp: ModelPart, defender: Model, numhits: int = 1):
+    def roll_to_wound(attackingmp: ModelPart, defender: Model, numhits: int ):
         str = attackingmp.v("Str")
         res = defender.v("Res")
         str_res_diff = str - res
@@ -52,7 +37,7 @@ class Attack:
         return total_successes
 
     @staticmethod
-    def roll_to_penetrate(attackingmp: ModelPart, defender: Model, numwounds: int = 1):
+    def roll_to_penetrate(attackingmp: ModelPart, defender: Model, numwounds: int ):
         ap = attackingmp.v("AP")
         arm = defender.v("Arm")
         arm_pen_diff = arm-ap
@@ -63,7 +48,7 @@ class Attack:
         return total_successes
 
     @staticmethod
-    def roll_against_special_save(attackingmp: ModelPart, defender: Model, num_unsaved_wounds: int = 1):
+    def roll_against_special_save(attackingmp: ModelPart, defender: Model, num_unsaved_wounds: int ):
 
         # TODO: make special saves work
         total_successes = num_unsaved_wounds
@@ -74,7 +59,8 @@ class Attack:
 
 
     @staticmethod
-    def full_attack_roll(attackingmp: ModelPart, defender: Model, numattacks: int = 1):
+    def full_attack_roll(attackingmp: ModelPart, defender: Model, numattacks: int):
+        # attack a certain number of times with a particular model part against a specific defending model
 
         total_successes = Attack.roll_against_special_save(attackingmp, defender,
                                     Attack.roll_to_penetrate(attackingmp, defender,
@@ -90,7 +76,7 @@ class Attack:
 
 
 
-    def attack_roll_all_modelparts(attacker: Model, defender: Model, numattacks: int = 1):
+    def attack_roll_all_modelparts(attacker: Model, defender: Model, numattacks: int):
         # Note: this attack function ignores the agility of model parts and possibility of return attacks. Use with caution.
 
         total_successes = sum([Attack.full_attack_roll(attackingmp, defender, numattacks=numattacks ) for attackingmp in attacker.modelparts])

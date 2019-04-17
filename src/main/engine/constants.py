@@ -1,3 +1,10 @@
+from enum import unique, Enum
+
+class Size(Enum):
+    small = 'small'
+    medium = 'medium'
+    big = 'big'
+
 
 # game-related constants
 
@@ -12,14 +19,40 @@ OFFENSIVE_STAT_NAMES = [ "Att", "Off", "Str", "AP", "Agi" ]
 GENERAL_AND_DEFENSIVE_STAT_NAMES = GENERAL_STAT_NAMES + DEFENSIVE_STAT_NAMES
 ALL_STAT_NAMES = GENERAL_STAT_NAMES + DEFENSIVE_STAT_NAMES + OFFENSIVE_STAT_NAMES
 
+# allowed facings
+
+from enum import Enum
+
+@unique
+class FACING(Enum):
+    FRONT = 'FRONT'
+    FLANK = 'FLANK'
+    REAR = 'REAR'
 
 # allowed types
 
-UNIT_TYPES = ["INFANTRY", "CAVALRY", "BEAST", "CHARIOT"]
+@unique
+class MODEL_TYPE(Enum):
+    INFANTRY = 'INFANTRY'
+    CAVALRY = 'CAVALRY'
+    BEAST = 'BEAST'
+    CHARIOT = 'CHARIOT'
 
 # allowed sizes
 
-UNIT_SIZES = ["STANDARD", "LARGE", "GIGANTIC" ]
+@unique
+class MODEL_SIZE(Enum):
+    STANDARD = 'STANDARD'
+    LARGE = 'LARGE'
+    GIGANTIC = 'GIGANTIC'
+
+
+#     Number of allowed supporting attacks
+
+ALLOWED_SUPPORTING_ATTACKS = {MODEL_SIZE.STANDARD: 1, MODEL_SIZE.LARGE: 3, MODEL_SIZE.GIGANTIC: 4}
+
+
+
 
 # allowed special rules
 
